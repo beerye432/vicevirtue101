@@ -51,11 +51,11 @@ function submitHabit() {
 
    //icon choose or file upload
    if (document.getElementById('icon1').className == "icon active") {
-    icons = '../img/sleep.jpg';
+    icons = '../public/img/sleep.jpg';
    } else if (document.getElementById('icon2').className == "icon active") {
-    icons = '../img/salad.jpg';
+    icons = '../public/img/salad.jpg';
    } else if (document.getElementById('icon3').className == "icon active") {
-    icons = '../img/run.jpg';
+    icons = '../public/img/run.jpg';
    } else if (document.getElementById('icon4').className == "icon active") {
     fileUploadControl = $("#icon4Upload")[0];
     file = fileUploadControl.files[0];
@@ -67,7 +67,7 @@ function submitHabit() {
      // The file either could not be read, or could not be saved to Parse.
     });
    } else {
-    icons = '../img/no-image.jpg';
+    icons = '../public/img/no-image.jpg';
    }
 
    if (document.getElementById('others').value == 0) {

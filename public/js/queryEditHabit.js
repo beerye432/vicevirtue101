@@ -73,10 +73,10 @@ function queryEditHabit() {
 						$('#edit-forms').append('<p><label><span id="title_text">' + 'Habit Title' + '</span></label></p>' +
 							'<p><input id="title" type="text" name="fullname" value="' + title + '"></p>' +
 							'<p><label>Habit Icon</label></p>' + '<center>' +
-							'<img id="icon1" class="icon" onclick="selectImage(\'icon1\');" src="../img/sleep.jpg" alt="sleep image"/>' +
-							'<img id="icon2" class="icon" onclick="selectImage(\'icon2\');" src="../img/salad.jpg" alt="eat image"/>' +
-							'<img id="icon3" class="icon" onclick="selectImage(\'icon3\');" src="../img/run.jpg" alt="run image"/>' +
-							'<img id="icon4" type="button" class="icon" onclick="selectImage(\'icon4\');" src="../img/add.png" alt="find a image"/>' +
+							'<img id="icon1" class="icon" onclick="selectImage(\'icon1\');" src="../public/img/sleep.jpg" alt="sleep image"/>' +
+							'<img id="icon2" class="icon" onclick="selectImage(\'icon2\');" src="../public/img/salad.jpg" alt="eat image"/>' +
+							'<img id="icon3" class="icon" onclick="selectImage(\'icon3\');" src="../public/img/run.jpg" alt="run image"/>' +
+							'<img id="icon4" type="button" class="icon" onclick="selectImage(\'icon4\');" src="../public/img/add.png" alt="find a image"/>' +
 							'<input type="file" style="display:none;" name="selection" id="icon4Upload" value="" accept="image/jpeg"/>' + '</center>' +
 							'<p><label>Weekly Frequency</label></p>' +
 							'<div id="ck-button">' + sundayBox + mondayBox + tuesdayBox + wednesdayBox + thursdayBox + fridayBox + saturdayBox + '</div>' +
@@ -107,11 +107,11 @@ function editHabit() {
 	var weekdaysSelected = 0;
 	var nanFlag = 0;
 	if (document.getElementById('icon1').className == "icon active") {
-		icon = '../img/sleep.jpg';
+		icon = '../public/img/sleep.jpg';
 	} else if (document.getElementById('icon2').className == "icon active") {
-		icon = '../img/salad.jpg';
+		icon = '../public/img/salad.jpg';
 	} else if (document.getElementById('icon3').className == "icon active") {
-		icon = '../img/run.jpg';
+		icon = '../public/img/run.jpg';
 	} else if (document.getElementById('icon4').className == "icon active") {
 		fileUploadControl = $("#icon4Upload")[0];
 		if (fileUploadControl.files.length > 0) {

@@ -113,9 +113,9 @@ function queryUserHabit() {
 						' max="' + frequency + '"></progress></p>' +
 						'</span><span class="message-today"></span>' +
 						'</div>' + '<div class="habit-op" >' +
-						s2 + 'type="button" class="op op-done" onclick="displayProgress(this,' + '\'' + resultBar + '\',' + '\'' + resultCompleted + '\'' + ');" title="done">' + '<img src="../img/done.svg" alt="Done"></button>' +
-						'<button type="button" class="op op-edit" onclick="createSession(\'' + title + '\',\'' + queryId + '\')" title="edit habit">' + '<img src="../img/edit.svg" alt="Edit"></button>' +
-						s2 + 'type="button" class="op op-del" onclick="confirmDeleteHabit(this);" title="delete habit">' + '<img src="../img/delete.svg" alt="Del"></button></div>' + '</li>');
+						s2 + 'type="button" class="op op-done" onclick="displayProgress(this,' + '\'' + resultBar + '\',' + '\'' + resultCompleted + '\'' + ');" title="done">' + '<img src="../public/img/done.svg" alt="Done"></button>' +
+						'<button type="button" class="op op-edit" onclick="createSession(\'' + title + '\',\'' + queryId + '\')" title="edit habit">' + '<img src="../public/img/edit.svg" alt="Edit"></button>' +
+						s2 + 'type="button" class="op op-del" onclick="confirmDeleteHabit(this);" title="delete habit">' + '<img src="../public/img/delete.svg" alt="Del"></button></div>' + '</li>');
 				})(jQuery);
 			}
 		},
@@ -170,8 +170,8 @@ function queryUserHabit2() {
 						'<div id="' + resultCompleted + '">You have completed this ' + totalTimesCompleted + ' out of ' + totalTimes + ' times.</div>' +
 						'</strong><br><br></span><span class="message-today"></span>' +
 						'</div>' + '<div class="habit-op" >' +
-						'<button type="button" class="op op-edit" onclick="createSession(\'' + title + '\',\'' + queryId + '\')" title="edit habit">' + '<img src="../img/edit.svg" alt="Edit"></button>' +
-						s2 + 'type="button" class="op op-del" onclick="confirmDeleteHabit(this);" title="delete habit">' + '<img src="../img/delete.svg" alt="Del"></button></div>' + '</li>');
+						'<button type="button" class="op op-edit" onclick="createSession(\'' + title + '\',\'' + queryId + '\')" title="edit habit">' + '<img src="../public/img/edit.svg" alt="Edit"></button>' +
+						s2 + 'type="button" class="op op-del" onclick="confirmDeleteHabit(this);" title="delete habit">' + '<img src="../public/img/delete.svg" alt="Del"></button></div>' + '</li>');
 				})(jQuery);
 			}
 		},
