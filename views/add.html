@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add a habit</title>
-    <link rel="stylesheet" href="../public/css/forms.css">
-    <link rel="stylesheet" href="../public/css/modal.css">
-    <script type="text/javascript" src="../public/js/addHabit.js"></script>
-    <script type="text/javascript" src="../public/js/modal.js"></script>
-    <script type="text/javascript" src="../public/js/utils.js"></script>
-    <script type="text/javascript" src="../public/js/parse-1.6.7.min.js"></script>
-    <script type="text/javascript" src="../public/js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../public/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../public/js/notify.min.js"></script>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/modal.css">
+    <script type="text/javascript" src="/js/addHabit.js"></script>
+    <script type="text/javascript" src="/js/modal.js"></script>
+    <script type="text/javascript" src="/js/utils.js"></script>
+    <script type="text/javascript" src="/js/parse-1.6.7.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/notify.min.js"></script>
   </head>
   
   <body onload="checkLogin(); initializeAlertDialog()">
@@ -24,10 +24,10 @@
         <p><input id="title" type="text" name="fullname" placeholder="e.g. Run for 30 minutes" maxlength="30"></p>  
         <p><label>Habit Icon</label></p>
         <center>
-        <img id="icon1" class="icon" onclick="selectImage('icon1');" src="../public/img/sleep.jpg" alt="sleep image"/>
-        <img id="icon2" class="icon" onclick="selectImage('icon2');" src="../public/img/salad.jpg" alt="eat image"/>
-        <img id="icon3" class="icon" onclick="selectImage('icon3');" src="../public/img/run.jpg" alt="run image"/>
-        <img id="icon4" class="icon" onclick="selectImage('icon4');" src="../public/img/add.png" alt="find an image"/>
+        <img id="icon1" class="icon" onclick="selectImage('icon1');" src="/img/sleep.jpg" alt="sleep image"/>
+        <img id="icon2" class="icon" onclick="selectImage('icon2');" src="/img/salad.jpg" alt="eat image"/>
+        <img id="icon3" class="icon" onclick="selectImage('icon3');" src="/img/run.jpg" alt="run image"/>
+        <img id="icon4" class="icon" onclick="selectImage('icon4');" src="/img/add.png" alt="find an image"/>
         <input type="file" style="display:none;" onchange="checkUpload('icon4');" name="selection" id="icon4Upload" accept="image/jpeg"/>
         </center>
         <p><label>Weekly Frequency</label></p>
