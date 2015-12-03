@@ -19,6 +19,7 @@ function login(evt) {
   var password = document.getElementById("login_password").value;
   // Find the associated username using the provided email
   var query = new Parse.Query(Parse.User);
+  var dimensions;
   query.equalTo("email", email);
   query.find({
     success : function (results) {
@@ -27,11 +28,39 @@ function login(evt) {
       // Login using found username
       Parse.User.logIn(username, password, {
         success : function (user) {
+		  dimensions = {"E-mail": email};
+		  Parse.Analytics.track('Login', dimensions);
           document.getElementById("loginForm").submit();
           location.href = "./list.html";
         },
         error : function (user, error) {
-          alert("Error: " + error.message);
+			var date = new Date();
+			var numberOfToday = date.getUTCDay();
+			switch (numberOfToday) {
+			case 0:
+				dimensions = {"Day": "Sunday"};
+				break;
+			case 1:
+				dimensions = {"Day": "Monday"};
+				break;
+			case 2:
+				dimensions = {"Day": "Tuesday"};
+				break;
+			case 3:
+				dimensions = {"Day": "Wednesday"};
+				break;
+			case 4:
+				dimensions = {"Day": "Thursday"};
+				break;
+			case 5:
+				dimensions = {"Day": "Friday"};
+				break;
+			case 6:
+				dimensions = {"Day": "Saturday"};
+				break;
+			}
+			Parse.Analytics.track('Err_Login', dimensions);
+            alert("Error: " + error.message);
         }
       });
     },
