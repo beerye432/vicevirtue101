@@ -12,9 +12,12 @@ gulp.task('sprite', function() {
        './public/img/*.png']).
     pipe(spritesmith({
       imgName: 'sprite.png',
-      cssName: 'sprite.css'
+      cssName: 'sprite.css',
+      cssVarMap: function(sprite) {
+        sprite.name = 'sprite_' + sprite.name
+      }
     }));
 
-  spriteData.img.pipe(gulp.dest('./bundle/images/')); // output path for the sprite
+  spriteData.img.pipe(gulp.dest('./public/img/')); // output path for the sprite
   spriteData.css.pipe(gulp.dest('./public/css/')); // output path for the CSS
 });
