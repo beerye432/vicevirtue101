@@ -24,7 +24,7 @@ gulp.task('minify:css', ['concat:css'], function() {
 });
 
 
-/* Minify html files and place in 'bundle' directory.
+/* Minify html files and place in './bundle/'.
  */
 gulp.task('minify:html', function() {
   var opts = {
