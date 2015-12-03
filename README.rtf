@@ -12,7 +12,7 @@ CSE 134B HW4
 
 
 ###Critical Notes:
-	####A. This is mainly regarding queryUserHabit.js. The application is supposed to work with day-oriented goals. We have implemented this functionality correctly in the stated file. However, for testing purposes (both for the graders and for ourselves) we have changed daily-updates to minutely-updates (by the minute instead of by the day). We have left this code in the file since we believe it will help the graders grade more easily. Again, our code for daily-updates is also inside - but they are commented out. The logic between daily-updates and minutely-updates is synonymous, so you can and should expect the daily-updates to work similarly to the minutely-updates.
+	####A. This is mainly regarding queryUserHabit.js. The application is supposed to work with day-oriented goals. We have implemented this functionality correctly in the stated file. However, if you wish to test the functionality, you can find four sections in the file where you can comment out daily-checks and uncomment minute-checks for easier testing. These parts are marked with keywords CRITICAL. If you would like to test minute-updates, make sure to comment out daily-updates and uncomment the minute-updates.
 
 ###Implementations/Changes:
 	####A. UI
@@ -57,7 +57,7 @@ CSE 134B HW4
 	  	  	  Reason: Users who decide to work on a habit for a certain day that they did not originally plan can do so by editing the habit's active days. Swapping between inactive and active will not increase the count any more than once since that would defeat the purpose of the app.
 	  	  c) Changing frequency counts (i.e. daily goals) of a habit will implicitly change the completion of that goal for that specific day. (e.g. if a user whose progress on a habit is 5/10 times in a particular day decides to change the goal to 5, the habit will become completed - this is true if for the converse as well)
 	  	  	  Reason: This functionality is intuitive and behaves in the benefit of the user's intentions.
-	  6. Alert box with refresh onclick of any success-buttons when a new day is detected. (Since we left minutely-updates in, this will occur when a new minute is detected). This will refresh the page to show a new set of active habits as well as update counts and progress. In order to test whether habits will appear in the correct list (active/inactive) on a new day, you can create a habit with different days selected and edit them, or uncomment the daily-updates code and comment out the minutely-updates.
+	  6. Alert box with refresh onclick of any success-buttons when a new day is detected. This will refresh the page to show a new set of active habits as well as update counts and progress. In order to more easily test whether habits will appear in the correct list (active/inactive) on a new day, you can create a habit with different days selected and edit them to see how they move within the active/inactive lists. (Note that our for-testing-only minutely-updates do not move a habit unless it is actually a new day, not a new minute!)
 
 	####E. Login and Logout
 	  1. Sign Up and login page
