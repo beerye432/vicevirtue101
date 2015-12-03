@@ -5,7 +5,7 @@ var concat = require('gulp-concat');
  * which is placed in the './bundle' folder
  */ 
 gulp.task('concat:js', function() {
-  return gulp.src(['./js/**/*.js'])
+  return gulp.src(['./public/js/**/*.js'])
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest('./bundle/'));
 });
@@ -14,7 +14,7 @@ gulp.task('concat:js', function() {
  * which is placed in the 'bundle' folder
  */ 
 gulp.task('concat:css', function() {
-  return gulp.src(['./css/**/*.css'])
+  return gulp.src(['./public/css/**/*.css'])
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest('./bundle/'));
 });
