@@ -3,6 +3,7 @@ var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
 var minifyHTML = require('gulp-minify-html');
 var minifyInline = require('gulp-minify-inline');
+var replace = require('gulp-replace');
 
 
 /* Minify 'bundle.js'. If it doesn't exist, create
@@ -29,6 +30,7 @@ gulp.task('minify:css', ['concat:css'], function() {
  */
 gulp.task('minify:html', function() {
   var opts = {
+    comments: true,
     conditionals: true,
     empty: true
   };
@@ -40,5 +42,22 @@ gulp.task('minify:html', function() {
 });
 
 
-/* Minify all js, css, html files in one step. */
-gulp.task('minify:all', ['minify:js', 'minify:css', 'minify:html']);
+/* Change file references of the minified html files.
+ * Comments out the references to unbundled css/js
+ * and adds references to bundled css/js
+ */
+gulp.task('htmlref', ['minify:js', 'minify:css', 'minify:html'], function() {
+  return gulp.src('./public/bundle/*.html')
+    .pipe(replace('<!----- development ----->', '<!----- development'))
+    .pipe(replace('<!----- end development ----->',
+      'end development -----><link rel="stylesheet" href="bundle.css"><script src="bundle.js"></script>'))
+    .pipe(gulp.dest('./public/bundle/'));
+});
+
+
+/* Minify all js, css, html files in one step.
+ * Also change relevant file references in
+ * the minified html
+ */
+gulp.task('build', ['htmlref']);
+
