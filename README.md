@@ -30,14 +30,15 @@ web app is definitely similar in terms of functionality, but it is apparent that
 from web app to android app. Other usability concerns have to be addressed, and a lot of fine tuning done before the Android
 version is consumer-ready. 
 
-
 ## Instruction for Parse Analytics
 1. Login with the Parse Account provided below.
 2. Navigate to our application and click on analytics.
 3. On the left, click on Events which is right below Audience.
 4. Below the navigation bar, change from API Requests to Custom Breakdown.
-5. On the right, change API Requests to any of the drop down values below read.
-6. From there you could apply filters to what data you want to see.
+5. On the right, change API Requests to any of the drop down Events below the 'read' value.
+6. From there you could apply filters to what data you want to see. For instance, if you were on the
+   Login event, you could apply the E-mail filter and select any of the E-mail values to get data pertaining
+   to this E-mail.
 7. You can save this information and add another event with the "+" symbol to make comparisons.
 
 ## Homework #5- App Prep and Distrubution:
