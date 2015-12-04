@@ -15,11 +15,11 @@ gulp.task('sprite', function() {
       cssName: 'sprite.css',
       cssOpts: {
         cssSelector: function(sprite) {
-          return 'sprite-' + sprite.name;
+          return '.sprite-' + sprite.name;
         }
       }
     }));
 
   spriteData.img.pipe(gulp.dest('./public/img/')); // output path for the sprite
-  spriteData.css.pipe(gulp.dest('./public/css/')); // output path for the CSS
+  return spriteData.css.pipe(gulp.dest('./public/css/')); // output path for the CSS
 });
