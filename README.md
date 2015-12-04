@@ -18,6 +18,14 @@ wish we could have implemented push notifications, but the time and effort trade
 
 2. (David, write about analytics here?)
 
+3. The Android proof of concept was a unique challenge. Reformatting our application to work with PhoneGap was a very unique
+and tedious challenge. The file structure had to be redesigned, as well as all of the filepaths (for every css, js, html, image).
+Building the Android app apk once I was satisfied was a pain simply because cordova (tool PhoneGap uses to build applications)
+required an outdated version of the Android SDK platform which I had to hunt down and install. The android app version of our 
+web app is definitely similair in terms of functionality, but it is apparent that you can't just make an effortless transition
+from web app to android app. Other usability concerns have to be addressed, and a lot of fine tuning done before the Android
+version is consumer-ready. 
+
 ## Homework #5- App Prep and Distrubution:
 
 ### Our Tech Stack and Services used:
@@ -31,6 +39,8 @@ wish we could have implemented push notifications, but the time and effort trade
 - Raygun.io (error monitoring)
 	* email: b4clark@ucsd.edu
 	* pass: foodie101
+- PhoneGap (Android Proof of Concept)
+	* vicevirtue.apk 
 
 
 
