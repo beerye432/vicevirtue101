@@ -13,8 +13,10 @@ gulp.task('sprite', function() {
     pipe(spritesmith({
       imgName: 'sprite.png',
       cssName: 'sprite.css',
-      cssVarMap: function(sprite) {
-        sprite.name = 'sprite_' + sprite.name
+      cssOpts: {
+        cssSelector: function(sprite) {
+          return 'sprite-' + sprite.name;
+        }
       }
     }));
 
