@@ -106,12 +106,16 @@ function editHabit() {
 	var frequency = 0;
 	var weekdaysSelected = 0;
 	var nanFlag = 0;
+	var emailAddress = Parse.User.current().getEmail();
 	if (document.getElementById('icon1').className == "icon active") {
 		icon = '../public/img/sleep.jpg';
+		Parse.Analytics.track('Edit_Habits', {"Icons": "Default_Icons", "User": emailAddress});
 	} else if (document.getElementById('icon2').className == "icon active") {
 		icon = '../public/img/salad.jpg';
+		Parse.Analytics.track('Edit_Habits', {"Icons": "Default_Icons", "User": emailAddress});
 	} else if (document.getElementById('icon3').className == "icon active") {
 		icon = '../public/img/run.jpg';
+		Parse.Analytics.track('Edit_Habits', {"Icons": "Default_Icons", "User": emailAddress});
 	} else if (document.getElementById('icon4').className == "icon active") {
 		fileUploadControl = $("#icon4Upload")[0];
 		if (fileUploadControl.files.length > 0) {
@@ -121,51 +125,63 @@ function editHabit() {
 		}
 		parseFile.save().then(function () {
 			// The file has been saved to Parse.
+			Parse.Analytics.track('Edit_Habits', {"Icons": "Upload_Icons", "User": emailAddress});
 		}, function (error) {
 			// The file either could not be read, or could not be saved to Parse.
 		});
 	} else {
 		icons = '../img/no-image.jpg';
+		Parse.Analytics.track('Edit_Habits', {"Icons": "No_Icons", "User": emailAddress});
 	}
 
 	if (document.getElementById('sunday').checked) {
 		weekArray[0] = 1;
 		weekdaysSelected++;
+		Parse.Analytics.track('Edit_Habits', {"Days_Selected": "Sun", "User": emailAddress});
 	}
 	if (document.getElementById('monday').checked) {
 		weekArray[1] = 1;
-		weekdaysSelected++
+		weekdaysSelected++;
+		Parse.Analytics.track('Edit_Habits', {"Days_Selected": "Mon", "User": emailAddress});
 	}
 	if (document.getElementById('tuesday').checked) {
 		weekArray[2] = 1;
-		weekdaysSelected++
+		weekdaysSelected++;
+		Parse.Analytics.track('Edit_Habits', {"Days_Selected": "Tue", "User": emailAddress});
 	}
 	if (document.getElementById('wednesday').checked) {
 		weekArray[3] = 1;
 		weekdaysSelected++;
+		Parse.Analytics.track('Edit_Habits', {"Days_Selected": "Wed", "User": emailAddress});
 	}
 	if (document.getElementById('thursday').checked) {
 		weekArray[4] = 1;
-		weekdaysSelected++
+		weekdaysSelected++;
+		Parse.Analytics.track('Edit_Habits', {"Days_Selected": "Thur", "User": emailAddress});
 	}
 	if (document.getElementById('friday').checked) {
 		weekArray[5] = 1;
 		weekdaysSelected++;
+		Parse.Analytics.track('Edit_Habits', {"Days_Selected": "Friday", "User": emailAddress});
 	}
 	if (document.getElementById('saturday').checked) {
 		weekArray[6] = 1;
 		weekdaysSelected++;
+		Parse.Analytics.track('Edit_Habits', {"Days_Selected": "Saturday", "User": emailAddress});
 	}
 
 	if (document.getElementById('others').value == 0) {
 		if (document.getElementById('frequency_one').checked) {
 			frequency = 1;
+			Parse.Analytics.track('Edit_Habits', {"Frequency": "Default", "User": emailAddress});
 		}
 		if (document.getElementById('frequency_two').checked) {
 			frequency = 2;
+			Parse.Analytics.track('Edit_Habits', {"Frequency": "Default", "User": emailAddress});
 		}
 		if (document.getElementById('frequency_three').checked) {
 			frequency = 3;
+			Parse.Analytics.track('Edit_Habits', {"Frequency": "Default", "User": emailAddress});
 		}
 	} else {
 		document.getElementById('frequency_one').checked = false;
@@ -175,17 +191,22 @@ function editHabit() {
 			nanFlag = 1;
 		} else {
 			frequency = parseInt(document.getElementById('others').value);
+			Parse.Analytics.track('Edit_Habits', {"Frequency": "Other_Frequency", "User": emailAddress});
 		}
 	}
 
 	if (weekdaysSelected == 0 && frequency <= 0) {
 		showAlertDialog('Please select your weekly frequency and also input or select your daily frequency');
+		Parse.Analytics.track('Error_Edit_Habits', {"Error_weekday": "Weekday_Selection", "Error_frequency": "Frequency_Selection", "Error": emailAddress});
 	} else if (weekdaysSelected == 0) {
 		showAlertDialog('Please select some of the weekly to track your habits.');
+		Parse.Analytics.track('Error_Edit_Habits', {"Error_weekday": "Weekday_Selection", "Error": emailAddress});
 	} else if (nanFlag) {
 		showAlertDialog('Please input a number and not characters for your daily frequency.');
+		Parse.Analytics.track('Error_Edit_Habits', {"Error_frequency": "Frequency_Selection", "Error": emailAddress});
 	} else if (frequency <= 0) {
 		showAlertDialog('Please input or select your daily frequency to a value greater than 0.');
+		Parse.Analytics.track('Error_Edit_Habits', {"Error_frequency": "Frequency_Selection", "Error": emailAddress});
 	} else {
 		query.get(localStorage.getItem("habitId"), {
 			success : function (results) {
@@ -201,6 +222,8 @@ function editHabit() {
 				results.set('edited', true);
 				results.save(null, {
 					success : function () {
+						var emailAddress1 = Parse.User.current().getEmail();
+						Parse.Analytics.track('Edit_Habits', {"User": emailAddress1});
 						location.href = "list.html";
 					}
 				});
@@ -231,5 +254,7 @@ function clearOther3() {
 }
 
 function cancelEditHabit() {
+    var emailAddress = Parse.User.current().getEmail();
+    Parse.Analytics.track('Edit_Habits', {"Cancel": emailAddress});
 	window.location = "./list.html";
 }
