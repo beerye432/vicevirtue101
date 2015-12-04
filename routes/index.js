@@ -22,5 +22,9 @@ router.get('/add.html', function(req, res, next) {
   res.render('add', { title: 'Add a Habit' });
 });
 
+router.get('/team.html', function(req, res, next) {
+  res.render('team', { title: 'Foodie101' });
+});
+
 
 module.exports = router;

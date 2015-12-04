@@ -63,6 +63,8 @@ body{
 #logOut:active{border: 2px solid gray; background: rgb(33, 72, 100); box-shadow: 0 0 10px gray;}
 #logOut:focus{outline-style:none;}
 
+#team{position: fixed; bottom: 40px; left: 20px; color: #1F3B63; vertical-align: middle; text-decoration: underline; font-size: 2.25vw;}
+#team:hover{text-decoration: underline; color: rgba(33, 72, 100, 0.7);}
 /* phone */
 @media only screen
     and (max-width: 500px) {
