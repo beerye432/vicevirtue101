@@ -13,7 +13,8 @@
     "jade": "~1.9.2",
     "morgan": "~1.5.3",
     "serve-favicon": "~2.2.1",
-    "raygun": "0.8.0"
+    "raygun": "0.8.0",
+    "ejs": "2.3.4"
   },
   "devDependencies" : {
     "gulp" : "^3.9.0",
