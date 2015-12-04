@@ -47,7 +47,7 @@ version is consumer-ready.
 
 - Node.js w/express
 - Parse
-- Gulp (bundling/minification/spriting/other automated tasks - our github wiki has more information)
+- Gulp (bundling/minification/spriting/other automated tasks - our [wiki](https://github.com/beerye432/vicevirtue101/wiki]) has more information)
 - Parse Analytics (usage monitoring/analytics)
 	* email: beerye432@gmail.com
 	* pass: foodie101
@@ -57,4 +57,4 @@ version is consumer-ready.
 - PhoneGap (Android Proof of Concept)
 	* vicevirtue.apk
 - Heroku (deployment)
-        * http://www.vicevirtue101.herokuapp.com
+	* http://vicevirtue101.herokuapp.com
