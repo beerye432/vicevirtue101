@@ -2,8 +2,7 @@
 
 ViceVirtue is designed to help users better themselves by providing a place for them to track their daily habits and goals. 
 
-There were a lot of design choices (listed in detail in README.rtf) that had to be made during the creation of ViceVirtue, and with these choices came
-a greater understanding of tradeoffs, but also limitations, struggles, and shortcomings. 
+There were a lot of design choices (listed in detail in [README.rtf](https://github.com/beerye432/vicevirtue101/blob/master/README.rtf)) that had to be made during the creation of ViceVirtue, and with these choices came a greater understanding of tradeoffs, but also limitations, struggles, and shortcomings. 
 
 ## Some of the shortcomings/issues/limitations we faced during development:
 
