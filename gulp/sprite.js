@@ -13,6 +13,7 @@ gulp.task('sprite', function() {
     pipe(spritesmith({
       imgName: 'sprite.png',
       cssName: 'sprite.css',
+      imgPath: '../img/sprite.png',
       cssOpts: {
         cssSelector: function(sprite) {
           return '.sprite-' + sprite.name;

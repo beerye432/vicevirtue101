@@ -8,6 +8,7 @@ var del = require('del');
  */
 gulp.task('clean', function(cb) {
   del(['./public/bundle/',
+       './views/*.html',
        './public/img/sprite.png',
        './public/css/sprite.css'], cb);
 });

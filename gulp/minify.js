@@ -26,7 +26,7 @@ gulp.task('minify:css', ['concat:css'], function() {
 });
 
 
-/* Minify html files and place in './public/bundle/'.
+/* Minify html files and place in './views/'.
  */
 gulp.task('minify:html', function() {
   var opts = {
@@ -35,10 +35,10 @@ gulp.task('minify:html', function() {
     empty: true
   };
 
-  return gulp.src('./views/*.html')
+  return gulp.src('./views/dev/*.html')
     .pipe(minifyInline())
     .pipe(minifyHTML(opts))
-    .pipe(gulp.dest('./public/bundle/'));
+    .pipe(gulp.dest('./views/'));
 });
 
 
@@ -47,10 +47,10 @@ gulp.task('minify:html', function() {
  * and adds references to bundled css/js
  */
 gulp.task('htmlref', ['minify:js', 'minify:css', 'minify:html'], function() {
-  return gulp.src('./public/bundle/*.html')
+  return gulp.src('./views/*.html')
     .pipe(replace(/<!----- development ----->.*<!----- end development ----->/g,
       '<link rel="stylesheet" href="/bundle/bundle.css"><script src="/bundle/bundle.js"></script>'))
-    .pipe(gulp.dest('./public/bundle/'));
+    .pipe(gulp.dest('./views/'));
 });
 
 

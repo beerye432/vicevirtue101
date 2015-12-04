@@ -10,67 +10,67 @@ Icon classes can be used entirely standalone. They are named after their origina
 ```
 */
 .sprite-add {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: -600px -1200px;
   width: 512px;
   height: 512px;
 }
 .sprite-add_habit {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: 0px -1200px;
   width: 600px;
   height: 600px;
 }
 .sprite-eat {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: 0px 0px;
   width: 600px;
   height: 600px;
 }
 .sprite-image-4 {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: -1200px -600px;
   width: 600px;
   height: 600px;
 }
 .sprite-logout {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: -1800px 0px;
   width: 411px;
   height: 418px;
 }
 .sprite-no-image {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: -1800px -418px;
   width: 300px;
   height: 300px;
 }
 .sprite-run {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: 0px -600px;
   width: 600px;
   height: 600px;
 }
 .sprite-salad {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: -600px -600px;
   width: 600px;
   height: 600px;
 }
 .sprite-settings {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: -1112px -1200px;
   width: 448px;
   height: 446px;
 }
 .sprite-sleep {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: -1200px 0px;
   width: 600px;
   height: 600px;
 }
 .sprite-smoke {
-  background-image: url(sprite.png);
+  background-image: url(../img/sprite.png);
   background-position: -600px 0px;
   width: 600px;
   height: 600px;
