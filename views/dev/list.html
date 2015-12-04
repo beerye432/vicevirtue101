@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!----- development ----->
-    <link rel="stylesheet" type="text/css" href="/css/list.css">
-    <link rel="stylesheet" type="text/css" href="/css/modal.css">
+    <link rel="stylesheet" href="/css/list.css">
+    <link rel="stylesheet" href="/css/modal.css">
     <link rel="stylesheet" href="/css/sprite.css">
     <script type="text/javascript" src="/js/queryUserHabit.js"></script>
     <script type="text/javascript" src="/js/modal.js"></script>
@@ -20,8 +20,9 @@
 
   <body onload="checkLogin(); queryUserHabit(); queryUserHabit2(); 
 initializeNotificationDialog(); initializeAlertDialog()">
-  <button type="button" id="logOut" onclick="logUserOut();" title="logOut">
-      <img src="/img/logout.png" alt="Log Out" width="30px" height="30px">
+    <button type="button" id="logOut" onclick="logUserOut();" title="log out">
+        <div class="sprite-logout" style="margin: 0 0 0 4.5px"></div>
+        <!--<img src="/img/logout.png" alt="Log Out" width="30px" height="30px">-->
     </button>
     <section>
         <h1 id="display-Day"></h1>
@@ -38,9 +39,13 @@ initializeNotificationDialog(); initializeAlertDialog()">
     <div id="AlertDialog" class="modal"></div>
   
     <button type="button" id="openSettings" onclick="showSettingsDialog()" title="open settings">
-      <img src="/img/settings.png" alt="Settings" width="30px" height="30px">
+      <div class="sprite-settings" style="margin: 0 0 0 4.5px"></div>
+      <!--<img src="/img/settings.png" alt="Settings" width="30px" height="30px">-->
     </button>
-    <button type="button" id="addHabit" onclick="location.href='add.html'" title="add habit"><img src="/img/add_habit.png" alt="Add Habit" width="25px" height="25px"></button>
+    <button type="button" id="addHabit" onclick="location.href='add.html'" title="add habit">
+        <div class="sprite-add_habit" style="margin: 0 0 0 4.5px"></div>
+        <!--<img src="/img/add_habit.png" alt="Add Habit" width="25px" height="25px">-->
+    </button>
 
     <a href = '/team.html' id = 'team'>Meet Our Team</a>
 

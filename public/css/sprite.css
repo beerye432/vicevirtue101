@@ -11,15 +11,15 @@ Icon classes can be used entirely standalone. They are named after their origina
 */
 .sprite-add {
   background-image: url(../img/sprite.png);
-  background-position: -600px -1200px;
+  background-position: 0px -1200px;
   width: 512px;
   height: 512px;
 }
 .sprite-add_habit {
   background-image: url(../img/sprite.png);
-  background-position: 0px -1200px;
-  width: 600px;
-  height: 600px;
+  background-position: -812px -1200px;
+  width: 30px;
+  height: 30px;
 }
 .sprite-eat {
   background-image: url(../img/sprite.png);
@@ -35,13 +35,13 @@ Icon classes can be used entirely standalone. They are named after their origina
 }
 .sprite-logout {
   background-image: url(../img/sprite.png);
-  background-position: -1800px 0px;
-  width: 411px;
-  height: 418px;
+  background-position: -842px -1200px;
+  width: 30px;
+  height: 30px;
 }
 .sprite-no-image {
   background-image: url(../img/sprite.png);
-  background-position: -1800px -418px;
+  background-position: -512px -1200px;
   width: 300px;
   height: 300px;
 }
@@ -59,9 +59,9 @@ Icon classes can be used entirely standalone. They are named after their origina
 }
 .sprite-settings {
   background-image: url(../img/sprite.png);
-  background-position: -1112px -1200px;
-  width: 448px;
-  height: 446px;
+  background-position: -872px -1200px;
+  width: 30px;
+  height: 30px;
 }
 .sprite-sleep {
   background-image: url(../img/sprite.png);
