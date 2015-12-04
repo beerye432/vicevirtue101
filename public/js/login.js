@@ -1,8 +1,14 @@
 function toggleForms() {
   var signup_form = document.getElementById("signupForm");
   var login_form = document.getElementById("loginForm");
+  var date = new Date();
+  var month = date.getUTCMonth() + 1; //months from 1-12
+  var day = date.getUTCDate();
+  var year = date.getUTCFullYear();
+  var newdate = month + "/" + day + "/" + year;
   signup_form.style.display = (signup_form.style.display == "none") ? "block" : "none";
   login_form.style.display = (login_form.style.display == "none") ? "block" : "none";
+  Parse.Analytics.track('SignUpCancel', {"Date": newdate});
 }
 
 function checkBrowser() {
@@ -20,6 +26,11 @@ function login(evt) {
   // Find the associated username using the provided email
   var query = new Parse.Query(Parse.User);
   var dimensions;
+  var date = new Date();
+  var month = date.getUTCMonth() + 1; //months from 1-12
+  var day = date.getUTCDate();
+  var year = date.getUTCFullYear();
+  var newdate = month + "/" + day + "/" + year;
   query.equalTo("email", email);
   query.find({
     success : function (results) {
@@ -28,38 +39,14 @@ function login(evt) {
       // Login using found username
       Parse.User.logIn(username, password, {
         success : function (user) {
-		  dimensions = {"E-mail": email};
+		  dimensions = {"E-mail": email, "Date": newdate};
 		  Parse.Analytics.track('Login', dimensions);
           document.getElementById("loginForm").submit();
           location.href = "./list.html";
         },
         error : function (user, error) {
-			var date = new Date();
-			var numberOfToday = date.getUTCDay();
-			switch (numberOfToday) {
-			case 0:
-				dimensions = {"Day": "Sunday"};
-				break;
-			case 1:
-				dimensions = {"Day": "Monday"};
-				break;
-			case 2:
-				dimensions = {"Day": "Tuesday"};
-				break;
-			case 3:
-				dimensions = {"Day": "Wednesday"};
-				break;
-			case 4:
-				dimensions = {"Day": "Thursday"};
-				break;
-			case 5:
-				dimensions = {"Day": "Friday"};
-				break;
-			case 6:
-				dimensions = {"Day": "Saturday"};
-				break;
-			}
-			Parse.Analytics.track('Err_Login', dimensions);
+		    dimensions = {"Date": newdate};
+		    Parse.Analytics.track('Err_Login', dimensions);
             alert("Error: " + error.message);
         }
       });
@@ -85,10 +72,19 @@ function register(evt) {
   user.set("notitoday", false);
   user.signUp(null, {
     success : function (user) {
+	  var date = new Date();
+	  var month = date.getUTCMonth() + 1; //months from 1-12
+	  var day = date.getUTCDate();
+	  var year = date.getUTCFullYear();
+	  var newdate = month + "/" + day + "/" + year;
+	  Parse.Analytics.track('Sign_Up', {"Date": newdate});
+	  dimensions = {"E-mail": email, "Date": newdate};
+	  Parse.Analytics.track('Login', dimensions);
       alert("Successfully signed up!");
       document.getElementById("signupForm").submit();
     },
     error : function (user, error) {
+	  Parse.Analytics.track('Error_Sign_Up', {"E-mail": email});
       alert("Error: " + error.message);
     }
   });

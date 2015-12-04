@@ -195,6 +195,13 @@ function deleteHabit(element) {
 	Parse.initialize("V6NcQkeFHBu6SOcSYJptWFgKzgOiuc2ywEXnmL31", "Xw3yYjXIFL6tVLwN3vhmPJMYLmd4AiJI3mRUjl1l");
 	var userId = Parse.Object.extend("Habit");
 	var query = new Parse.Query(userId);
+	var today = new Date();
+	var emailAddress = Parse.User.current().getEmail();
+	var month = today.getUTCMonth() + 1; //months from 1-12
+	var day = today.getUTCDate();
+	var year = today.getUTCFullYear();
+	var newdate = month + "/" + day + "/" + year;
+	Parse.Analytics.track('Habit_Deleted', {"Date": newdate, "Email": emailAddress});
 	query.equalTo("objectId", element.id);
 	query.find({
 		success : function (results) {
@@ -228,7 +235,11 @@ function displayProgress(element, barId, completedId) {
 			var streaksUpdatedAt = new Date(habit.attributes.streaksUpdatedAt);
 			var todayString = today.toDateString();
 			var streaksUpdatedAtString = streaksUpdatedAt.toDateString();
-			
+			var emailAddress = Parse.User.current().getEmail();
+			var month = today.getUTCMonth() + 1; //months from 1-12
+			var day = today.getUTCDate();
+			var year = today.getUTCFullYear();
+			var newdate = month + "/" + day + "/" + year;	
 			/*****/
 			// CRITICAL: For testing only. 1 day = 1 minute
 			/*
@@ -249,6 +260,7 @@ function displayProgress(element, barId, completedId) {
 						$.notify("You have completed habit '" + habit.attributes.Title + "'!", 'success', {
 							elementPosition : 'top'
 						});
+						Parse.Analytics.track('Habit_Completed', {"Date": newdate, "Email": emailAddress});
 					}
 					habit.set("successCount", successCount);
 					habit.save();
@@ -352,6 +364,14 @@ function dateDiffInDays(d1, d2) {
 }
 
 function logUserOut() {
+	var email = Parse.User.current().getEmail();
+	var date = new Date();
+	var month = date.getUTCMonth() + 1; //months from 1-12
+	var day = date.getUTCDate();
+	var year = date.getUTCFullYear();
+	var newdate = month + "/" + day + "/" + year;
+	var dimensions = {"Date": newdate, "Email": email};
+	Parse.Analytics.track('Log_Out', dimensions);
 	Parse.User.logOut();
 	location.href = "login.html";
 }
