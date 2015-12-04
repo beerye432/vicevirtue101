@@ -59,13 +59,13 @@ function submitHabit() {
 
    //icon choose or file upload
    if (document.getElementById('icon1').className == "icon active") {
-    icons = '../public/img/sleep.jpg';
+    icons = '/img/sleep.jpg';
 	Parse.Analytics.track('Add_Habits', {"Icons": "Default_Icons", "User": emailAddress});
    } else if (document.getElementById('icon2').className == "icon active") {
-    icons = '../public/img/salad.jpg';
+    icons = '/img/salad.jpg';
 	Parse.Analytics.track('Add_Habits', {"Icons": "Default_Icons", "User": emailAddress});
    } else if (document.getElementById('icon3').className == "icon active") {
-    icons = '../public/img/run.jpg';
+    icons = '/img/run.jpg';
 	Parse.Analytics.track('Add_Habits', {"Icons": "Default_Icons", "User": emailAddress});
    } else if (document.getElementById('icon4').className == "icon active") {
     fileUploadControl = $("#icon4Upload")[0];
@@ -79,7 +79,7 @@ function submitHabit() {
      // The file either could not be read, or could not be saved to Parse.
     });
    } else {
-    icons = '../public/img/no-image.jpg';
+    icons = '/img/no-image.jpg';
 	Parse.Analytics.track('Add_Habits', {"Icons": "No_Icons", "User": emailAddress});
    }
 
