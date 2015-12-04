@@ -1,8 +1,8 @@
 # Welcome to Foodie101's ViceVirtue App
 
-ViceVirtue is designed to help users better themselves by providing a place for them to track daily habits and goals. 
+ViceVirtue is designed to help users better themselves by providing a place for them to track their daily habits and goals. 
 
-There were a lot of design choices that had to be made during the creation of ViceVirtue, and with these choices came
+There were a lot of design choices (listed in detail in README.rtf) that had to be made during the creation of ViceVirtue, and with these choices came
 a greater understanding of tradeoffs, but also limitations, struggles, and shortcomings. 
 
 ## Some of the shortcomings/issues/limitations we faced during development:
@@ -21,14 +21,13 @@ of data for one case. Information would not show in analytics if that specific c
 Knowing this, we decided to only group up to three types of data on some cases while the majority is two. (This gives us a sense 
 of what the users are doing with this application.) Another challenge would be testing our analytics submission for every page.
 Once the analytics information is submitted to Parse it stays there and cannot be removed. This proves to be an annoyance since
-you have to be precise on what to submit, so if the structure of what we submitted changes, it would create another additional data 
-in Parse and keep old data we do not use anymore.
+you have to be precise on what to submit, so if the structure of what we submitted changes, it would create another additional data in Parse and keep old data we do not use anymore.
 
 3. The Android proof of concept was a unique challenge. Reformatting our application to work with PhoneGap was a very unique
 and tedious challenge. The file structure had to be redesigned, as well as all of the filepaths (for every css, js, html, image).
 Building the Android app apk once I was satisfied was a pain simply because cordova (tool PhoneGap uses to build applications)
 required an outdated version of the Android SDK platform which I had to hunt down and install. The android app version of our 
-web app is definitely similair in terms of functionality, but it is apparent that you can't just make an effortless transition
+web app is definitely similar in terms of functionality, but it is apparent that you can't just make an effortless transition
 from web app to android app. Other usability concerns have to be addressed, and a lot of fine tuning done before the Android
 version is consumer-ready. 
 
@@ -48,7 +47,7 @@ version is consumer-ready.
 
 - Node.js w/express
 - Parse
-- Gulp (minification/spriting)
+- Gulp (bundling/minification/spriting/other automated tasks - our github wiki has more information)
 - Parse Analytics (usage monitoring/analytics)
 	* email: beerye432@gmail.com
 	* pass: foodie101
@@ -56,9 +55,6 @@ version is consumer-ready.
 	* email: b4clark@ucsd.edu
 	* pass: foodie101
 - PhoneGap (Android Proof of Concept)
-	* vicevirtue.apk 
-
-
-
-
-
+	* vicevirtue.apk
+- Heroku (deployment)
+        * http://www.vicevirtue101.herokuapp.com
