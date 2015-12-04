@@ -49,7 +49,7 @@ gulp.task('minify:html', function() {
 gulp.task('htmlref', ['minify:js', 'minify:css', 'minify:html'], function() {
   return gulp.src('./public/bundle/*.html')
     .pipe(replace(/<!----- development ----->.*<!----- end development ----->/g,
-      '<link rel="stylesheet" href="bundle.css"><script src="bundle.js"></script>'))
+      '<link rel="stylesheet" href="/bundle/bundle.css"><script src="/bundle/bundle.js"></script>'))
     .pipe(gulp.dest('./public/bundle/'));
 });
 
