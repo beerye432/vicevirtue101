@@ -16,7 +16,13 @@ device basis. Even in the best case, we couldn't find a push notification soluti
 We decided instead to maintain our sanity, and implement gentle reminders within the browser to users using notifyJS. We
 wish we could have implemented push notifications, but the time and effort tradeoff wasn't worth it in our opinion.
 
-2. (David, write about analytics here?)
+2. For Parse Analytics, it would be very hard to keep track of specific cases since there would be a need for a lot of grouping
+of data for one case. Information would not show in analytics if that specific case you want is not implemented within the code. 
+Knowing this, we decided to only group up to three types of data on some cases while the majority is two. (This gives us a sense 
+of what the users are doing with this application.) Another challenge would be testing our analytics submission for every page.
+Once the analytics information is submitted to Parse it stays there and cannot be removed. This proves to be an annoyance since
+you have to be precise on what to submit, so if the structure of what we submitted changes, it would create another additional data 
+in Parse and keep old data we do not use anymore.
 
 3. The Android proof of concept was a unique challenge. Reformatting our application to work with PhoneGap was a very unique
 and tedious challenge. The file structure had to be redesigned, as well as all of the filepaths (for every css, js, html, image).
@@ -25,6 +31,16 @@ required an outdated version of the Android SDK platform which I had to hunt dow
 web app is definitely similair in terms of functionality, but it is apparent that you can't just make an effortless transition
 from web app to android app. Other usability concerns have to be addressed, and a lot of fine tuning done before the Android
 version is consumer-ready. 
+
+
+## Instruction for Parse Analytics
+1. Login with the Parse Account provided below.
+2. Navigate to our application and click on analytics.
+3. On the left, click on Events which is right below Audience.
+4. Below the navigation bar, change from API Requests to Custom Breakdown.
+5. On the right, change API Requests to any of the drop down values below read.
+6. From there you could apply filters to what data you want to see.
+7. You can save this information and add another event with the "+" symbol to make comparisons.
 
 ## Homework #5- App Prep and Distrubution:
 
