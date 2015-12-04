@@ -1,0 +1,83 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+sprite-add {
+  background-image: url(sprite.png);
+  background-position: -4200px -7018px;
+  width: 512px;
+  height: 512px;
+}
+sprite-add_habit {
+  background-image: url(sprite.png);
+  background-position: -3600px -7018px;
+  width: 600px;
+  height: 600px;
+}
+sprite-eat {
+  background-image: url(sprite.png);
+  background-position: 0px -7018px;
+  width: 600px;
+  height: 600px;
+}
+sprite-image-4 {
+  background-image: url(sprite.png);
+  background-position: -3000px -7018px;
+  width: 600px;
+  height: 600px;
+}
+sprite-logout {
+  background-image: url(sprite.png);
+  background-position: -5160px -7018px;
+  width: 411px;
+  height: 418px;
+}
+sprite-no-image {
+  background-image: url(sprite.png);
+  background-position: -5571px -7018px;
+  width: 300px;
+  height: 300px;
+}
+sprite-run {
+  background-image: url(sprite.png);
+  background-position: -600px -7018px;
+  width: 600px;
+  height: 600px;
+}
+sprite-salad {
+  background-image: url(sprite.png);
+  background-position: -1200px -7018px;
+  width: 600px;
+  height: 600px;
+}
+sprite-settings {
+  background-image: url(sprite.png);
+  background-position: -4712px -7018px;
+  width: 448px;
+  height: 446px;
+}
+sprite-sleep {
+  background-image: url(sprite.png);
+  background-position: -1800px -7018px;
+  width: 600px;
+  height: 600px;
+}
+sprite-smoke {
+  background-image: url(sprite.png);
+  background-position: -2400px -7018px;
+  width: 600px;
+  height: 600px;
+}
+sprite-sprite {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 7694px;
+  height: 7018px;
+}
